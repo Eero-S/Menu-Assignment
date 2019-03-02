@@ -1,0 +1,7 @@
+/* Custom Font */
+@font-face {
+  font-family: 'Arial Rounded MT Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Arial Rounded MT Bold'), url('./fonts/ARLRDBD_0.woff') format('woff');
+  }
