@@ -4,7 +4,7 @@ The purpose of this project is to represent the https://www.telia.fi/ menu.
 
 ### Live demo
 
-https://build-i05bdn21y.now.sh/
+https://build-b5jk16c6u.now.sh/
 
 
 ### Available Scripts
