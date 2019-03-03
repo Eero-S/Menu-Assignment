@@ -49,6 +49,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     background: #f2f2f2;
     top: 4em;
+    display: ${props => (props.visible ? '' : 'None')};
   }
 `;
 // The upper part of dropdown
