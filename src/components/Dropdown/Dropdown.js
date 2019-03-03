@@ -4,8 +4,9 @@ import SearchItem from './ItemSearch';
 import WrapGrid from './WrapGrid';
 import WrapRow from './WrapRow';
 
-const Dropdown = ({ visible, clicked }) => (
-  <Wrapper clicked={clicked} visible={visible}>
+// The dropdownmenu.
+const Dropdown = ({ visible }) => (
+  <Wrapper visible={visible}>
     <WrapperTop>
       <WrapRow />
       <SearchItem />
@@ -14,6 +15,7 @@ const Dropdown = ({ visible, clicked }) => (
   </Wrapper>
 );
 
+// Animations for the dropdown.
 const slideIn = keyframes`
   from {
     transform: translateY(-100%);
@@ -49,7 +51,7 @@ const Wrapper = styled.div`
     top: 4em;
   }
 `;
-
+// The upper part of dropdown
 const WrapperTop = styled.div`
   padding: 0 6%;
   background: #f2f2f2;

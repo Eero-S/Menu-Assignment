@@ -8,49 +8,43 @@ class App extends Component {
     super();
     this.showMenu = this.showMenu.bind(this);
     this.state = {
-      visible: false,
-      clicked: false
+      visible: false
     };
   }
 
   showMenu() {
     this.setState(prevState => ({ visible: !prevState.visible }));
-    this.setState({ clicked: true });
   }
 
   render() {
-    const { visible, clicked } = this.state;
+    const { visible } = this.state;
     return (
       <div>
-        <Menu toggle={this.showMenu} visible={visible} clicked={clicked} />
+        <Menu toggle={this.showMenu} visible={visible} />
         <Div>
-          <h1>Content1</h1>
-          <h1>Content2</h1>
-          <h1>Content1</h1>
-          <h1>Content2</h1>
-          <h1>Content1</h1>
-          <h1>Content2</h1>
-          <h1>Content1</h1>
-          <h1>Content2</h1>
-          <h1>Content1</h1>
-          <h1>Content2</h1>
-          <h1>Content1</h1>
-          <h1>Content2</h1>
+          <Content>Content</Content>
+          <Content>Content</Content>
+          <Content>Content</Content>
         </Div>
       </div>
     );
   }
 }
+// Some content for the page to help in testing that menu works correctly.
+const Content = styled.h1`
+  margin-bottom: 15em;
+`;
 
 const Div = styled.div`
   top: 5em;
   position: relative;
   height: 80em;
-  background: #fff2f2;
+  background: #cfd2d6;
   display: flex;
   align-items: center;
   flex-direction: column;
   z-index: -1;
+  padding-top: 15em;
 `;
 
 export default App;

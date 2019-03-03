@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from './Navbar/Navbar';
 import Dropdown from './Dropdown/Dropdown';
 
+// This component contains the navbar and the dropdownmenu.
 const Menu = ({ toggle, visible, clicked }) => (
   <Wrapper>
     <Navbar toggle={toggle} visible={visible} />
