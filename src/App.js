@@ -36,7 +36,6 @@ const Content = styled.h1`
 `;
 
 const Div = styled.div`
-  top: 5em;
   position: relative;
   height: 80em;
   background: #cfd2d6;

@@ -31,14 +31,14 @@ const Hyper = styled.a`
 
 const Text = styled.p`
   margin-left: 1.3em;
-  font-size: 20px;
+  font-size: 1.3em;
   @media (max-width: 840px) {
     font-size: 1em;
   }
 `;
 
 const Icon = styled.span`
-  font-size: 45px;
+  font-size: 3em;
   @media (max-width: 840px) {
     font-size: 1.5em;
   }

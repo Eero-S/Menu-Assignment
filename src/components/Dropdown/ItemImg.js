@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ItemImg = ({ pic, title, text }) => (
   <Wrapper>
     <Hyper>
-      <Icon src={pic} />
+      <Image src={pic} />
       <TextWrap>
         <Title>{title}</Title>
         <Text>{text}</Text>
@@ -15,7 +15,7 @@ const ItemImg = ({ pic, title, text }) => (
 
 const Wrapper = styled.div`
   width: 20%;
-  margin-right: 15px;
+  margin-right: 1em;
   @media (max-width: 840px) {
     order: 2;
     width: 95%;
@@ -39,7 +39,7 @@ const TextWrap = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 20px;
+  font-size: 1.3em;
   margin: 0;
   @media (max-width: 840px) {
     font-size: 1em;
@@ -47,7 +47,7 @@ const Title = styled.p`
 `;
 
 const Text = styled.p`
-  font-size: 15px;
+  font-size: 0.9em;
   color: #707070;
   margin: 0;
   @media (max-width: 840px) {
@@ -55,10 +55,10 @@ const Text = styled.p`
   }
 `;
 
-const Icon = styled.img`
+const Image = styled.img`
   margin-right: 1.3em;
-  width: 64px;
-  height: 64px;
+  width: 4em;
+  height: 4em;
   @media (max-width: 840px) {
     width: 1.5em;
     height: 1.5em;

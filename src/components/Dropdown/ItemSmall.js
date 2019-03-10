@@ -1,14 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const ItemSmall = ({ icon, title }) => (
-  <Wrapper>
-    <Hyper>
-      <Icon>{icon}</Icon>
-      <Text>{title}</Text>
-    </Hyper>
-  </Wrapper>
-);
+class ItemSmall extends Component {
+  constructor() {
+    super();
+    this.changeHover = this.changeHover.bind(this);
+    this.state = {
+      isHover: false
+    };
+  }
+
+  changeHover() {
+    this.setState(prevState => ({ isHover: !prevState.isHover }));
+  }
+
+  render() {
+    const { isHover } = this.state;
+    const { icon, title } = this.props;
+    return (
+      <Wrapper>
+        <Hyper
+          onMouseOver={this.changeHover}
+          onMouseOut={this.changeHover}
+          onBlur={this.changeHover}
+          onFocus={this.changeHover}
+        >
+          <Icon>{icon}</Icon>
+          <Text isHover={isHover}>{title}</Text>
+        </Hyper>
+      </Wrapper>
+    );
+  }
+}
 
 const Wrapper = styled.div`
   margin-right: 1.5em;
@@ -33,11 +56,9 @@ const Hyper = styled.a`
 
 const Text = styled.p`
   margin-left: 1.6em;
-  color: #707070;
+  color: ${props => (props.isHover ? '#990ae3' : '#707070')};
   font-size: 1.1em;
-  :hover {
-    color: #990ae3;
-  }
+
   @media (max-width: 840px) {
     font-size: 1em;
     color: inherit;

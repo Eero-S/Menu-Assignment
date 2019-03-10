@@ -20,7 +20,6 @@ const slideIn = keyframes`
   from {
     transform: translateY(-100%);
   }
-
   to {
     transform: translateY(0);
   }
@@ -30,7 +29,6 @@ const slideOut = keyframes`
   from {    
     transform: translateY(0);
   }
-
   to {
     transform: translateY(-100%);
   }
@@ -40,9 +38,9 @@ const Wrapper = styled.div`
   visibility: ${props => (props.visible ? 'visible' : 'Hidden')};
   animation: ${props => (props.visible ? slideIn : slideOut)} 200ms ease-in;
   transition: visibility 200ms ease-in;
-  width: 100%;
   position: relative;
   top: 5em;
+  width: 100%;
   font-family: 'Arial', 'sans-serif';
   @media (max-width: 840px) {
     display: flex;
@@ -50,6 +48,7 @@ const Wrapper = styled.div`
     background: #f2f2f2;
     top: 4em;
     display: ${props => (props.visible ? '' : 'None')};
+    overflow: auto;
   }
 `;
 // The upper part of dropdown

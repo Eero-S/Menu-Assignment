@@ -2,15 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import '../../index.css';
 
-const NavButton = ({ icon, title, toggle }) => (
-  <Wrapper type="button" onClick={toggle}>
+const NavButton = ({ icon, title, toggle, visible }) => (
+  <Wrapper visible={visible} type="button" onClick={toggle}>
     <Icon>{icon}</Icon>
     <Text>{title}</Text>
   </Wrapper>
 );
 
 const Wrapper = styled.button`
+  padding: 0;
   max-width: 200px;
+  margin-right: 2em;
   height: 100%;
   display: flex;
   align-items: center;
@@ -18,16 +20,20 @@ const Wrapper = styled.button`
   border: none;
   outline: none;
   background: #fff;
+  border-bottom: ${props => (props.visible ? '3px solid #990ae3' : 'none')};
+  margin-bottom: ${props => (props.visible ? '-3px' : '0')};
   cursor: pointer;
   :hover {
     color: #d32cd6;
+  }
+  @media (max-width: 1080px) {
+    margin: 0.5em;
   }
 `;
 
 const Text = styled.p`
   margin-left: 0.2em;
-  margin-right: 1em;
-  font-size: 23px;
+  font-size: 1.8em;
   font-family: 'Arial Rounded MT Bold';
   text-transform: uppercase;
   @media (max-width: 1080px) {
@@ -37,7 +43,7 @@ const Text = styled.p`
 
 const Icon = styled.span`
   top: 4px;
-  font-size: 33px;
+  font-size: 2.5em;
   position: relative;
 `;
 

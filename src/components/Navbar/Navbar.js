@@ -9,7 +9,12 @@ const Navbar = ({ toggle, visible }) => (
     <Nav>
       <Logo />
       <NavButtonsWrapper>
-        <NavButton toggle={toggle} icon={visible ? <MdClear /> : <MdMenu />} title="Valikko" />
+        <NavButton
+          visible={visible}
+          toggle={toggle}
+          icon={visible ? <MdClear /> : <MdMenu />}
+          title="Valikko"
+        />
         <NavButton icon={<MdPerson />} title="Kirjaudu" />
         <NavButton icon={<MdShoppingCart />} />
       </NavButtonsWrapper>
