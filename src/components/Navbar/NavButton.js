@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import '../../index.css';
+import PropTypes from 'prop-types';
 
 const NavButton = ({ icon, title, toggle, visible }) => (
   <Wrapper visible={visible} type="button" onClick={toggle}>
@@ -30,6 +31,13 @@ const Wrapper = styled.button`
     margin: 0.5em;
   }
 `;
+
+NavButton.propTypes = {
+  icon: PropTypes.element,
+  title: PropTypes.string,
+  toggle: PropTypes.func,
+  visible: PropTypes.bool
+};
 
 const Text = styled.p`
   margin-left: 0.2em;

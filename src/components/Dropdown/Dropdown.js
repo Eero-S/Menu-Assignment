@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import PropTypes from 'prop-types';
 import SearchItem from './ItemSearch';
 import WrapGrid from './WrapGrid';
 import WrapRow from './WrapRow';
@@ -14,6 +15,10 @@ const Dropdown = ({ visible }) => (
     <WrapGrid />
   </Wrapper>
 );
+
+Dropdown.propTypes = {
+  visible: PropTypes.bool
+};
 
 // Animations for the dropdown.
 const slideIn = keyframes`

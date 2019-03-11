@@ -4,12 +4,18 @@ import { MdRoom, MdHelp, MdCall } from 'react-icons/md';
 import { IoIosPeople } from 'react-icons/io';
 import ItemSmall from './ItemSmall';
 
+const Items = [
+  { icon: <MdRoom />, title: 'Etsi kauppa' },
+  { icon: <MdHelp />, title: 'Etsi ohjeita' },
+  { icon: <IoIosPeople />, title: 'Kysy yhteisöltä' },
+  { icon: <MdCall />, title: 'Ota yhteyttä' }
+];
+
 const WrapRow = () => (
   <Wrapper>
-    <ItemSmall icon={<MdRoom />} title="Etsi kauppa" />
-    <ItemSmall icon={<MdHelp />} title="Etsi ohjeita" />
-    <ItemSmall icon={<IoIosPeople />} title="Kysy yhteisöltä" />
-    <ItemSmall icon={<MdCall />} title="Ota yhteyttä" />
+    {Items.map(item => (
+      <ItemSmall icon={item.icon} title={item.title} key={item.title} />
+    ))}
   </Wrapper>
 );
 

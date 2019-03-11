@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { MdPerson, MdMenu, MdShoppingCart, MdClear } from 'react-icons/md';
+import PropTypes from 'prop-types';
 import Logo from './Logo';
 import NavButton from './NavButton';
 
@@ -21,6 +22,11 @@ const Navbar = ({ toggle, visible }) => (
     </Nav>
   </Wrapper>
 );
+
+Navbar.propTypes = {
+  toggle: PropTypes.func,
+  visible: PropTypes.bool
+};
 
 const Wrapper = styled.div`
   width: 100%;

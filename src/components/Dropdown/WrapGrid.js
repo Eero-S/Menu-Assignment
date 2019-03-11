@@ -4,21 +4,20 @@ import { MdApps, MdSimCard } from 'react-icons/md';
 import { TiWiFi } from 'react-icons/ti';
 import { FaPlayCircle, FaShoppingBag } from 'react-icons/fa';
 import { GoDeviceMobile } from 'react-icons/go';
-import ItemBig from './ItemBig';
-import ItemImg from './ItemImg';
+import ItemGrid from './ItemGrid';
 import Dot from '../../pics/Dot.png';
 import Liiga from '../../pics/Liiga.png';
 
 const WrapGrid = () => (
   <Wrapper>
-    <ItemBig icon={<GoDeviceMobile />} title="Laitteet" />
-    <ItemBig icon={<MdSimCard />} title="Liittymät" />
-    <ItemBig icon={<TiWiFi />} title="Laajakaistat" />
-    <ItemImg title="Dot" pic={Dot} text="Laita piste perinteisille liittymille." />
-    <ItemBig icon={<FaPlayCircle />} title="TV ja viihde" />
-    <ItemBig icon={<MdApps />} title="Palvelut" />
-    <ItemBig icon={<FaShoppingBag />} title="Tarjoukset" />
-    <ItemImg title="Liiga" pic={Liiga} text="Telia on Liigan uusi koti." />
+    <ItemGrid icon={<GoDeviceMobile />} title="Laitteet" />
+    <ItemGrid icon={<MdSimCard />} title="Liittymät" />
+    <ItemGrid icon={<TiWiFi />} title="Laajakaistat" />
+    <ItemGrid order={2} title="Dot" pic={Dot} text="Laita piste perinteisille liittymille." />
+    <ItemGrid icon={<FaPlayCircle />} title="TV ja viihde" />
+    <ItemGrid icon={<MdApps />} title="Palvelut" />
+    <ItemGrid icon={<FaShoppingBag />} title="Tarjoukset" />
+    <ItemGrid order={2} title="Liiga" pic={Liiga} text="Telia on Liigan uusi koti." />
   </Wrapper>
 );
 

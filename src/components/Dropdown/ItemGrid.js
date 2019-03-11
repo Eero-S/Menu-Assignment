@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const ItemImg = ({ pic, title, text }) => (
-  <Wrapper>
+const ItemGrid = ({ pic, title, text, icon, order }) => (
+  <Wrapper order={order}>
     <Hyper>
-      <Image src={pic} />
+      {pic ? <Image src={pic} /> : <Icon>{icon}</Icon>}
       <TextWrap>
         <Title>{title}</Title>
         <Text>{text}</Text>
@@ -13,11 +14,19 @@ const ItemImg = ({ pic, title, text }) => (
   </Wrapper>
 );
 
+ItemGrid.propTypes = {
+  pic: PropTypes.string,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  icon: PropTypes.element,
+  order: PropTypes.number
+};
+
 const Wrapper = styled.div`
   width: 20%;
   margin-right: 1em;
   @media (max-width: 840px) {
-    order: 2;
+    order: ${props => props.order};
     width: 95%;
     border-bottom: 1px solid lightgrey;
     margin-top: 0.5em;
@@ -36,6 +45,7 @@ const Hyper = styled.a`
 
 const TextWrap = styled.div`
   word-wrap: none;
+  margin-left: 1.3em;
 `;
 
 const Title = styled.p`
@@ -56,7 +66,6 @@ const Text = styled.p`
 `;
 
 const Image = styled.img`
-  margin-right: 1.3em;
   width: 4em;
   height: 4em;
   @media (max-width: 840px) {
@@ -65,4 +74,11 @@ const Image = styled.img`
   }
 `;
 
-export default ItemImg;
+const Icon = styled.span`
+  font-size: 3em;
+  @media (max-width: 840px) {
+    font-size: 1.5em;
+  }
+`;
+
+export default ItemGrid;

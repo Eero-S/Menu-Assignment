@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 class ItemSmall extends Component {
   constructor() {
@@ -32,6 +33,11 @@ class ItemSmall extends Component {
     );
   }
 }
+
+ItemSmall.propTypes = {
+  icon: PropTypes.element,
+  title: PropTypes.string
+};
 
 const Wrapper = styled.div`
   margin-right: 1.5em;
