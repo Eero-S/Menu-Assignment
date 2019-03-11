@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Navbar from './Navbar/Navbar';
 import Dropdown from './Dropdown/Dropdown';
@@ -10,6 +11,11 @@ const Menu = ({ toggle, visible }) => (
     <Dropdown visible={visible} />
   </Wrapper>
 );
+
+Menu.propTypes = {
+  toggle: PropTypes.func,
+  visible: PropTypes.bool
+};
 
 const Wrapper = styled.div`
   position: fixed;
